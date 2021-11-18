@@ -5,7 +5,7 @@ import * as common from './common.js'
 esbuild.build({
   entryPoints: ['src/App.jsx'],
   bundle: true,
-  outfile: 'build/out.js',
+  outfile: `${common.buildDir}/out.js`,
   sourcemap: true,
   target: ['chrome58','firefox57','safari11','edge16']
 }).then(result => {

@@ -4,7 +4,7 @@
   "description": "Minimal React app",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf build ; cp -r public build ; node config/build.js",
+    "build": "rm -rf docs ; cp -r public docs ; node config/build.js",
     "serve": "node config/serve.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
