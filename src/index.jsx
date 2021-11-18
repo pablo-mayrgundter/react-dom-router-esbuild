@@ -19,7 +19,7 @@ function Routed() {
 
   return (
     <Routes>
-      <Route path="*" element={<App/>}/>
+      <Route path="/react/*" element={<App/>}/>
     </Routes>
   )
 }
