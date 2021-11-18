@@ -12,7 +12,10 @@
     "type": "git",
     "url": "git+https://github.com/pablo-mayrgundter/react.git"
   },
-  "keywords": [ "react", "js" ],
+  "keywords": [
+    "react",
+    "js"
+  ],
   "author": "Pablo Mayrgundter",
   "license": "ISC",
   "bugs": {
@@ -21,7 +24,8 @@
   "homepage": "https://github.com/pablo-mayrgundter/react#readme",
   "dependencies": {
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.0.2"
   },
   "devDependencies": {
     "esbuild": "^0.13.14"
