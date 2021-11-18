@@ -1,0 +1,29 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "Minimal React app",
+  "main": "index.js",
+  "scripts": {
+    "build": "rm -rf build ; cp -r public build ; node config/build.js",
+    "serve": "node config/serve.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pablo-mayrgundter/react.git"
+  },
+  "keywords": [ "react", "js" ],
+  "author": "Pablo Mayrgundter",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pablo-mayrgundter/react/issues"
+  },
+  "homepage": "https://github.com/pablo-mayrgundter/react#readme",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "esbuild": "^0.13.14"
+  }
+}
