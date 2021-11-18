@@ -1,4 +1,8 @@
-require('esbuild').build({
+import esbuild from 'esbuild'
+import * as common from './common.js'
+
+
+esbuild.build({
   entryPoints: ['src/App.jsx'],
   bundle: true,
   outfile: 'build/out.js',

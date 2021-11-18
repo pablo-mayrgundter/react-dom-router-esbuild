@@ -1,11 +1,14 @@
-const buildDir = 'build';
-require('esbuild').serve({
+import esbuild from 'esbuild'
+import * as common from './common.js'
+
+
+esbuild.serve({
   port: 8080,
-  servedir: `${buildDir}`,
+  servedir: `${common.buildDir}`,
 }, {
   entryPoints: ['src/App.jsx'],
   bundle: true,
-  outfile: `${buildDir}/out.js`,
+  outfile: `${common.buildDir}/out.js`,
   sourcemap: true,
   target: ['chrome58','firefox57','safari11','edge16'],
 }).then(result => {
