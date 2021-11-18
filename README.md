@@ -1,6 +1,6 @@
 # react
 
-React + esbuild w/watch + serving
+React + esbuild w/watch + warm serving
 
 Repo clone takes 3s
 
