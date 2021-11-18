@@ -1,4 +1,4 @@
-const buildDir = 'build'
+const buildDir = 'docs'
 
 export {
   buildDir
