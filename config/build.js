@@ -3,7 +3,7 @@ import * as common from './common.js'
 
 
 esbuild.build({
-  entryPoints: ['src/App.jsx'],
+  entryPoints: [common.entry],
   bundle: true,
   outfile: `${common.buildDir}/out.js`,
   sourcemap: true,

@@ -1,5 +1,7 @@
+const entry = 'src/index.jsx'
 const buildDir = 'docs'
 
 export {
-  buildDir
+  buildDir,
+  entry
 }

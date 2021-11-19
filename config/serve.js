@@ -8,7 +8,7 @@ esbuild.serve({
   port: port,
   servedir: 'docs',
 }, {
-  entryPoints: ['src/index.jsx'],
+  entryPoints: [common.entry],
   bundle: true,
   outfile: `${common.buildDir}/out.js`,
   sourcemap: true,
