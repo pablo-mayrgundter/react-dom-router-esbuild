@@ -1,10 +1,12 @@
 # react
 
-React + esbuild w/watch + warm serving
+React + Router + esbuild w/watch + warm serving
 
 Repo clone takes 3s
 
-yarn install takes 1s, 11MB node_modules
+yarn install takes 1s
+
+13MB node_modules
 
 yarn build takes <1s
 
