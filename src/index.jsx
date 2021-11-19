@@ -28,3 +28,5 @@ ReactDOM.render(
   <BrowserRouter>
     <Routed/>
   </BrowserRouter>, document.getElementById('root'))
+
+console.log('App loaded.');
