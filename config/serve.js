@@ -7,13 +7,7 @@ const port = 8080;
 esbuild.serve({
   port: port,
   servedir: 'docs',
-}, {
-  entryPoints: [common.entry],
-  bundle: true,
-  outfile: `${common.buildDir}/out.js`,
-  sourcemap: true,
-  target: ['chrome58','firefox57','safari11','edge18']
-}).then(result => {
+}, common.build).then(result => {
   // The result tells us where esbuild's local server is
   const {host, port} = result
 
