@@ -1,6 +1,6 @@
 # react
 
-React + Router + esbuild w/watch + warm serving
+React + Router + esbuild + warm dev serving
 
 Repo clone takes 3s
 
