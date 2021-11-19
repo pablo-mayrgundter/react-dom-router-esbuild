@@ -498,7 +498,7 @@
             }
             return element;
           };
-          function createElement(type, config, children) {
+          function createElement3(type, config, children) {
             var propName;
             var props = {};
             var key = null;
@@ -610,7 +610,7 @@
             }
             return ReactElement(element.type, key, ref, self, source, owner, props);
           }
-          function isValidElement(object) {
+          function isValidElement2(object) {
             return typeof object === "object" && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
           }
           var SEPARATOR = ".";
@@ -672,7 +672,7 @@
                   return c;
                 });
               } else if (mappedChild != null) {
-                if (isValidElement(mappedChild)) {
+                if (isValidElement2(mappedChild)) {
                   mappedChild = cloneAndReplaceKey(mappedChild, escapedPrefix + (mappedChild.key && (!_child || _child.key !== mappedChild.key) ? escapeUserProvidedKey("" + mappedChild.key) + "/" : "") + childKey);
                 }
                 array.push(mappedChild);
@@ -749,14 +749,14 @@
             }) || [];
           }
           function onlyChild(children) {
-            if (!isValidElement(children)) {
+            if (!isValidElement2(children)) {
               {
                 throw Error("React.Children.only expected to receive a single React element child.");
               }
             }
             return children;
           }
-          function createContext(defaultValue, calculateChangedBits) {
+          function createContext2(defaultValue, calculateChangedBits) {
             if (calculateChangedBits === void 0) {
               calculateChangedBits = null;
             } else {
@@ -935,7 +935,7 @@
             }
             return lazyType;
           }
-          function forwardRef(render) {
+          function forwardRef2(render) {
             {
               if (render != null && render.$$typeof === REACT_MEMO_TYPE) {
                 error("forwardRef requires a render function but received a `memo` component. Instead of forwardRef(memo(...)), use memo(forwardRef(...)).");
@@ -1027,7 +1027,7 @@
             }
             return dispatcher;
           }
-          function useContext(Context, unstable_observedBits) {
+          function useContext2(Context, unstable_observedBits) {
             var dispatcher = resolveDispatcher();
             {
               if (unstable_observedBits !== void 0) {
@@ -1044,7 +1044,7 @@
             }
             return dispatcher.useContext(Context, unstable_observedBits);
           }
-          function useState(initialState) {
+          function useState3(initialState) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useState(initialState);
           }
@@ -1052,23 +1052,23 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useReducer(reducer, initialArg, init);
           }
-          function useRef(initialValue) {
+          function useRef3(initialValue) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useRef(initialValue);
           }
-          function useEffect(create, deps) {
+          function useEffect2(create, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useEffect(create, deps);
           }
-          function useLayoutEffect(create, deps) {
+          function useLayoutEffect3(create, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useLayoutEffect(create, deps);
           }
-          function useCallback(callback, deps) {
+          function useCallback3(callback, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useCallback(callback, deps);
           }
-          function useMemo(create, deps) {
+          function useMemo3(create, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useMemo(create, deps);
           }
@@ -1449,11 +1449,11 @@
             if (Array.isArray(node)) {
               for (var i = 0; i < node.length; i++) {
                 var child = node[i];
-                if (isValidElement(child)) {
+                if (isValidElement2(child)) {
                   validateExplicitKey(child, parentType);
                 }
               }
-            } else if (isValidElement(node)) {
+            } else if (isValidElement2(node)) {
               if (node._store) {
                 node._store.validated = true;
               }
@@ -1464,7 +1464,7 @@
                   var iterator = iteratorFn.call(node);
                   var step;
                   while (!(step = iterator.next()).done) {
-                    if (isValidElement(step.value)) {
+                    if (isValidElement2(step.value)) {
                       validateExplicitKey(step.value, parentType);
                     }
                   }
@@ -1546,7 +1546,7 @@
                 error("React.createElement: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s", typeString, info);
               }
             }
-            var element = createElement.apply(this, arguments);
+            var element = createElement3.apply(this, arguments);
             if (element == null) {
               return element;
             }
@@ -1603,36 +1603,36 @@
           var createElement$1 = createElementWithValidation;
           var cloneElement$1 = cloneElementWithValidation;
           var createFactory = createFactoryWithValidation;
-          var Children = {
+          var Children2 = {
             map: mapChildren,
             forEach: forEachChildren,
             count: countChildren,
             toArray,
             only: onlyChild
           };
-          exports.Children = Children;
+          exports.Children = Children2;
           exports.Component = Component;
           exports.PureComponent = PureComponent;
           exports.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactSharedInternals;
           exports.cloneElement = cloneElement$1;
-          exports.createContext = createContext;
+          exports.createContext = createContext2;
           exports.createElement = createElement$1;
           exports.createFactory = createFactory;
           exports.createRef = createRef;
-          exports.forwardRef = forwardRef;
-          exports.isValidElement = isValidElement;
+          exports.forwardRef = forwardRef2;
+          exports.isValidElement = isValidElement2;
           exports.lazy = lazy;
           exports.memo = memo;
-          exports.useCallback = useCallback;
-          exports.useContext = useContext;
+          exports.useCallback = useCallback3;
+          exports.useContext = useContext2;
           exports.useDebugValue = useDebugValue;
-          exports.useEffect = useEffect;
+          exports.useEffect = useEffect2;
           exports.useImperativeHandle = useImperativeHandle;
-          exports.useLayoutEffect = useLayoutEffect;
-          exports.useMemo = useMemo;
+          exports.useLayoutEffect = useLayoutEffect3;
+          exports.useMemo = useMemo3;
           exports.useReducer = useReducer;
-          exports.useRef = useRef;
-          exports.useState = useState;
+          exports.useRef = useRef3;
+          exports.useState = useState3;
           exports.version = ReactVersion;
         })();
       }
@@ -1652,8 +1652,338 @@
   });
 
   // src/App.jsx
+  var import_react3 = __toModule(require_react());
+
+  // node_modules/react-router-dom/index.js
+  var import_react2 = __toModule(require_react());
+
+  // node_modules/history/index.js
+  var r;
+  var B = r || (r = {});
+  B.Pop = "POP";
+  B.Push = "PUSH";
+  B.Replace = "REPLACE";
+  function I(b) {
+    var h = b.pathname, k = b.search;
+    b = b.hash;
+    return (h === void 0 ? "/" : h) + (k === void 0 ? "" : k) + (b === void 0 ? "" : b);
+  }
+  function J(b) {
+    var h = {};
+    if (b) {
+      var k = b.indexOf("#");
+      0 <= k && (h.hash = b.substr(k), b = b.substr(0, k));
+      k = b.indexOf("?");
+      0 <= k && (h.search = b.substr(k), b = b.substr(0, k));
+      b && (h.pathname = b);
+    }
+    return h;
+  }
+
+  // node_modules/react-router/index.js
   var import_react = __toModule(require_react());
-  var App = () => /* @__PURE__ */ import_react.default.createElement("h1", null, "Hello, whirled!!");
+  function invariant(cond, message) {
+    if (!cond)
+      throw new Error(message);
+  }
+  function warning(cond, message) {
+    if (!cond) {
+      if (typeof console !== "undefined")
+        console.warn(message);
+      try {
+        throw new Error(message);
+      } catch (e) {
+      }
+    }
+  }
+  var NavigationContext = /* @__PURE__ */ (0, import_react.createContext)(null);
+  if (true) {
+    NavigationContext.displayName = "Navigation";
+  }
+  var LocationContext = /* @__PURE__ */ (0, import_react.createContext)(null);
+  if (true) {
+    LocationContext.displayName = "Location";
+  }
+  var RouteContext = /* @__PURE__ */ (0, import_react.createContext)({
+    outlet: null,
+    matches: []
+  });
+  if (true) {
+    RouteContext.displayName = "Route";
+  }
+  function useHref(to) {
+    !useInRouterContext() ? true ? invariant(false, "useHref() may be used only in the context of a <Router> component.") : invariant(false) : void 0;
+    let {
+      basename,
+      navigator
+    } = (0, import_react.useContext)(NavigationContext);
+    let {
+      hash,
+      pathname,
+      search
+    } = useResolvedPath(to);
+    let joinedPathname = pathname;
+    if (basename !== "/") {
+      let toPathname = getToPathname(to);
+      let endsWithSlash = toPathname != null && toPathname.endsWith("/");
+      joinedPathname = pathname === "/" ? basename + (endsWithSlash ? "/" : "") : joinPaths([basename, pathname]);
+    }
+    return navigator.createHref({
+      pathname: joinedPathname,
+      search,
+      hash
+    });
+  }
+  function useInRouterContext() {
+    return (0, import_react.useContext)(LocationContext) != null;
+  }
+  function useLocation() {
+    !useInRouterContext() ? true ? invariant(false, "useLocation() may be used only in the context of a <Router> component.") : invariant(false) : void 0;
+    return (0, import_react.useContext)(LocationContext).location;
+  }
+  function useNavigate() {
+    !useInRouterContext() ? true ? invariant(false, "useNavigate() may be used only in the context of a <Router> component.") : invariant(false) : void 0;
+    let {
+      basename,
+      navigator
+    } = (0, import_react.useContext)(NavigationContext);
+    let {
+      matches
+    } = (0, import_react.useContext)(RouteContext);
+    let {
+      pathname: locationPathname
+    } = useLocation();
+    let routePathnamesJson = JSON.stringify(matches.map((match) => match.pathnameBase));
+    let activeRef = (0, import_react.useRef)(false);
+    (0, import_react.useEffect)(() => {
+      activeRef.current = true;
+    });
+    let navigate = (0, import_react.useCallback)(function(to, options) {
+      if (options === void 0) {
+        options = {};
+      }
+      true ? warning(activeRef.current, "You should call navigate() in a React.useEffect(), not when your component is first rendered.") : void 0;
+      if (!activeRef.current)
+        return;
+      if (typeof to === "number") {
+        navigator.go(to);
+        return;
+      }
+      let path = resolveTo(to, JSON.parse(routePathnamesJson), locationPathname);
+      if (basename !== "/") {
+        path.pathname = joinPaths([basename, path.pathname]);
+      }
+      (!!options.replace ? navigator.replace : navigator.push)(path, options.state);
+    }, [basename, navigator, routePathnamesJson, locationPathname]);
+    return navigate;
+  }
+  function useResolvedPath(to) {
+    let {
+      matches
+    } = (0, import_react.useContext)(RouteContext);
+    let {
+      pathname: locationPathname
+    } = useLocation();
+    let routePathnamesJson = JSON.stringify(matches.map((match) => match.pathnameBase));
+    return (0, import_react.useMemo)(() => resolveTo(to, JSON.parse(routePathnamesJson), locationPathname), [to, routePathnamesJson, locationPathname]);
+  }
+  function resolvePath(to, fromPathname) {
+    if (fromPathname === void 0) {
+      fromPathname = "/";
+    }
+    let {
+      pathname: toPathname,
+      search = "",
+      hash = ""
+    } = typeof to === "string" ? J(to) : to;
+    let pathname = toPathname ? toPathname.startsWith("/") ? toPathname : resolvePathname(toPathname, fromPathname) : fromPathname;
+    return {
+      pathname,
+      search: normalizeSearch(search),
+      hash: normalizeHash(hash)
+    };
+  }
+  function resolvePathname(relativePath, fromPathname) {
+    let segments = fromPathname.replace(/\/+$/, "").split("/");
+    let relativeSegments = relativePath.split("/");
+    relativeSegments.forEach((segment) => {
+      if (segment === "..") {
+        if (segments.length > 1)
+          segments.pop();
+      } else if (segment !== ".") {
+        segments.push(segment);
+      }
+    });
+    return segments.length > 1 ? segments.join("/") : "/";
+  }
+  function resolveTo(toArg, routePathnames, locationPathname) {
+    let to = typeof toArg === "string" ? J(toArg) : toArg;
+    let toPathname = toArg === "" || to.pathname === "" ? "/" : to.pathname;
+    let from;
+    if (toPathname == null) {
+      from = locationPathname;
+    } else {
+      let routePathnameIndex = routePathnames.length - 1;
+      if (toPathname.startsWith("..")) {
+        let toSegments = toPathname.split("/");
+        while (toSegments[0] === "..") {
+          toSegments.shift();
+          routePathnameIndex -= 1;
+        }
+        to.pathname = toSegments.join("/");
+      }
+      from = routePathnameIndex >= 0 ? routePathnames[routePathnameIndex] : "/";
+    }
+    let path = resolvePath(to, from);
+    if (toPathname && toPathname !== "/" && toPathname.endsWith("/") && !path.pathname.endsWith("/")) {
+      path.pathname += "/";
+    }
+    return path;
+  }
+  function getToPathname(to) {
+    return to === "" || to.pathname === "" ? "/" : typeof to === "string" ? J(to).pathname : to.pathname;
+  }
+  var joinPaths = (paths) => paths.join("/").replace(/\/\/+/g, "/");
+  var normalizeSearch = (search) => !search || search === "?" ? "" : search.startsWith("?") ? search : "?" + search;
+  var normalizeHash = (hash) => !hash || hash === "#" ? "" : hash.startsWith("#") ? hash : "#" + hash;
+
+  // node_modules/react-router-dom/index.js
+  function _extends2() {
+    _extends2 = Object.assign || function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends2.apply(this, arguments);
+  }
+  function _objectWithoutPropertiesLoose(source, excluded) {
+    if (source == null)
+      return {};
+    var target = {};
+    var sourceKeys = Object.keys(source);
+    var key, i;
+    for (i = 0; i < sourceKeys.length; i++) {
+      key = sourceKeys[i];
+      if (excluded.indexOf(key) >= 0)
+        continue;
+      target[key] = source[key];
+    }
+    return target;
+  }
+  var _excluded = ["onClick", "reloadDocument", "replace", "state", "target", "to"];
+  var _excluded2 = ["aria-current", "caseSensitive", "className", "end", "style", "to"];
+  function isModifiedEvent(event) {
+    return !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey);
+  }
+  var Link = /* @__PURE__ */ (0, import_react2.forwardRef)(function LinkWithRef(_ref3, ref) {
+    let {
+      onClick,
+      reloadDocument,
+      replace = false,
+      state,
+      target,
+      to
+    } = _ref3, rest = _objectWithoutPropertiesLoose(_ref3, _excluded);
+    let href = useHref(to);
+    let internalOnClick = useLinkClickHandler(to, {
+      replace,
+      state,
+      target
+    });
+    function handleClick(event) {
+      if (onClick)
+        onClick(event);
+      if (!event.defaultPrevented && !reloadDocument) {
+        internalOnClick(event);
+      }
+    }
+    return /* @__PURE__ */ (0, import_react2.createElement)("a", _extends2({}, rest, {
+      href,
+      onClick: handleClick,
+      ref,
+      target
+    }));
+  });
+  if (true) {
+    Link.displayName = "Link";
+  }
+  var NavLink = /* @__PURE__ */ (0, import_react2.forwardRef)(function NavLinkWithRef(_ref4, ref) {
+    let {
+      "aria-current": ariaCurrentProp = "page",
+      caseSensitive = false,
+      className: classNameProp = "",
+      end = false,
+      style: styleProp,
+      to
+    } = _ref4, rest = _objectWithoutPropertiesLoose(_ref4, _excluded2);
+    let location = useLocation();
+    let path = useResolvedPath(to);
+    let locationPathname = location.pathname;
+    let toPathname = path.pathname;
+    if (!caseSensitive) {
+      locationPathname = locationPathname.toLowerCase();
+      toPathname = toPathname.toLowerCase();
+    }
+    let isActive = locationPathname === toPathname || !end && locationPathname.startsWith(toPathname) && locationPathname.charAt(toPathname.length) === "/";
+    let ariaCurrent = isActive ? ariaCurrentProp : void 0;
+    let className;
+    if (typeof classNameProp === "function") {
+      className = classNameProp({
+        isActive
+      });
+    } else {
+      className = [classNameProp, isActive ? "active" : null].filter(Boolean).join(" ");
+    }
+    let style = typeof styleProp === "function" ? styleProp({
+      isActive
+    }) : styleProp;
+    return /* @__PURE__ */ (0, import_react2.createElement)(Link, _extends2({}, rest, {
+      "aria-current": ariaCurrent,
+      className,
+      ref,
+      style,
+      to
+    }));
+  });
+  if (true) {
+    NavLink.displayName = "NavLink";
+  }
+  function useLinkClickHandler(to, _temp) {
+    let {
+      target,
+      replace: replaceProp,
+      state
+    } = _temp === void 0 ? {} : _temp;
+    let navigate = useNavigate();
+    let location = useLocation();
+    let path = useResolvedPath(to);
+    return (0, import_react2.useCallback)((event) => {
+      if (event.button === 0 && (!target || target === "_self") && !isModifiedEvent(event)) {
+        event.preventDefault();
+        let replace = !!replaceProp || I(location) === I(path);
+        navigate(to, {
+          replace,
+          state
+        });
+      }
+    }, [location, navigate, path, replaceProp, state, target, to]);
+  }
+
+  // src/App.jsx
+  function App() {
+    const location = useLocation();
+    const [path, setPath] = import_react3.default.useState("");
+    import_react3.default.useEffect(() => {
+      setPath(location.pathname);
+    }, [location]);
+    return /* @__PURE__ */ import_react3.default.createElement("div", null, /* @__PURE__ */ import_react3.default.createElement("h1", null, "Hello, whirled!!"), "Path: ", path);
+  }
   var App_default = App;
 })();
 /*
@@ -1661,6 +1991,26 @@ object-assign
 (c) Sindre Sorhus
 @license MIT
 */
+/**
+ * React Router DOM v6.0.2
+ *
+ * Copyright (c) Remix Software Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */
+/**
+ * React Router v6.0.2
+ *
+ * Copyright (c) Remix Software Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */
 /** @license React v17.0.2
  * react.development.js
  *
