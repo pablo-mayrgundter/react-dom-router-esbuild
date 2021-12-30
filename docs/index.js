@@ -6,18 +6,18 @@ var __getProtoOf = Object.getPrototypeOf;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __markAsModule = (target) => __defProp(target, "__esModule", { value: true });
 var __commonJS = (cb, mod) => function __require() {
-  return mod || (0, cb[Object.keys(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+  return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
 };
-var __reExport = (target, module, desc) => {
+var __reExport = (target, module, copyDefault, desc) => {
   if (module && typeof module === "object" || typeof module === "function") {
     for (let key of __getOwnPropNames(module))
-      if (!__hasOwnProp.call(target, key) && key !== "default")
+      if (!__hasOwnProp.call(target, key) && (copyDefault || key !== "default"))
         __defProp(target, key, { get: () => module[key], enumerable: !(desc = __getOwnPropDesc(module, key)) || desc.enumerable });
   }
   return target;
 };
-var __toModule = (module) => {
-  return __reExport(__markAsModule(__defProp(module != null ? __create(__getProtoOf(module)) : {}, "default", module && module.__esModule && "default" in module ? { get: () => module.default, enumerable: true } : { value: module, enumerable: true })), module);
+var __toESM = (module, isNodeMode) => {
+  return __reExport(__markAsModule(__defProp(module != null ? __create(__getProtoOf(module)) : {}, "default", !isNodeMode && module && module.__esModule ? { get: () => module.default, enumerable: true } : { value: module, enumerable: true })), module);
 };
 
 // node_modules/object-assign/index.js
@@ -1594,8 +1594,8 @@ var require_react_development = __commonJS({
         {
           try {
             var frozenObject = Object.freeze({});
-            new Map([[frozenObject, null]]);
-            new Set([frozenObject]);
+            /* @__PURE__ */ new Map([[frozenObject, null]]);
+            /* @__PURE__ */ new Set([frozenObject]);
           } catch (e) {
           }
         }
@@ -2152,7 +2152,7 @@ var require_scheduler_tracing_development = __commonJS({
         exports.__subscriberRef = null;
         {
           exports.__interactionsRef = {
-            current: new Set()
+            current: /* @__PURE__ */ new Set()
           };
           exports.__subscriberRef = {
             current: null
@@ -2160,7 +2160,7 @@ var require_scheduler_tracing_development = __commonJS({
         }
         function unstable_clear(callback) {
           var prevInteractions = exports.__interactionsRef.current;
-          exports.__interactionsRef.current = new Set();
+          exports.__interactionsRef.current = /* @__PURE__ */ new Set();
           try {
             return callback();
           } finally {
@@ -2281,7 +2281,7 @@ var require_scheduler_tracing_development = __commonJS({
         }
         var subscribers = null;
         {
-          subscribers = new Set();
+          subscribers = /* @__PURE__ */ new Set();
         }
         function unstable_subscribe(subscriber) {
           {
@@ -2439,11 +2439,11 @@ var require_react_dom_development = __commonJS({
     if (true) {
       (function() {
         "use strict";
-        var React3 = require_react();
+        var React4 = require_react();
         var _assign = require_object_assign();
         var Scheduler = require_scheduler();
         var tracing = require_tracing();
-        var ReactSharedInternals = React3.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+        var ReactSharedInternals = React4.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
         function warn(format) {
           {
             for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
@@ -2475,7 +2475,7 @@ var require_react_dom_development = __commonJS({
             Function.prototype.apply.call(console[level], console, argsWithFormat);
           }
         }
-        if (!React3) {
+        if (!React4) {
           {
             throw Error("ReactDOM was loaded before React. Make sure you load the React package before loading ReactDOM.");
           }
@@ -2509,7 +2509,7 @@ var require_react_dom_development = __commonJS({
         var enableFundamentalAPI = false;
         var enableNewReconciler = false;
         var warnAboutStringRefs = false;
-        var allNativeEvents = new Set();
+        var allNativeEvents = /* @__PURE__ */ new Set();
         var registrationNameDependencies = {};
         var possibleRegistrationNames = {};
         function registerTwoPhaseEvent(registrationName, dependencies) {
@@ -3691,7 +3691,7 @@ var require_react_dom_development = __commonJS({
         var didWarnInvalidChild = false;
         function flattenChildren(children) {
           var content = "";
-          React3.Children.forEach(children, function(child) {
+          React4.Children.forEach(children, function(child) {
             if (child == null) {
               return;
             }
@@ -3702,7 +3702,7 @@ var require_react_dom_development = __commonJS({
         function validateProps(element, props) {
           {
             if (typeof props.children === "object" && props.children !== null) {
-              React3.Children.forEach(props.children, function(child) {
+              React4.Children.forEach(props.children, function(child) {
                 if (child == null) {
                   return;
                 }
@@ -5704,8 +5704,8 @@ var require_react_dom_development = __commonJS({
         var queuedFocus = null;
         var queuedDrag = null;
         var queuedMouse = null;
-        var queuedPointers = new Map();
-        var queuedPointerCaptures = new Map();
+        var queuedPointers = /* @__PURE__ */ new Map();
+        var queuedPointerCaptures = /* @__PURE__ */ new Map();
         var queuedExplicitHydrationTargets = [];
         function hasQueuedDiscreteEvents() {
           return queuedDiscreteEvents.length > 0;
@@ -6022,8 +6022,8 @@ var require_react_dom_development = __commonJS({
         var ANIMATION_ITERATION = getVendorPrefixedEventName("animationiteration");
         var ANIMATION_START = getVendorPrefixedEventName("animationstart");
         var TRANSITION_END = getVendorPrefixedEventName("transitionend");
-        var topLevelEventsToReactNames = new Map();
-        var eventPriorities = new Map();
+        var topLevelEventsToReactNames = /* @__PURE__ */ new Map();
+        var eventPriorities = /* @__PURE__ */ new Map();
         var discreteEventPairsForSimpleEventPlugin = [
           "cancel",
           "cancel",
@@ -8821,7 +8821,7 @@ var require_react_dom_development = __commonJS({
           }
           assertValidProps(tag, rawProps);
           {
-            extraAttributeNames = new Set();
+            extraAttributeNames = /* @__PURE__ */ new Set();
             var attributes = domElement.attributes;
             for (var _i = 0; _i < attributes.length; _i++) {
               var name = attributes[_i].name.toLowerCase();
@@ -9706,7 +9706,7 @@ var require_react_dom_development = __commonJS({
         function getEventListenerSet(node) {
           var elementListenerSet = node[internalEventHandlersKey];
           if (elementListenerSet === void 0) {
-            elementListenerSet = node[internalEventHandlersKey] = new Set();
+            elementListenerSet = node[internalEventHandlersKey] = /* @__PURE__ */ new Set();
           }
           return elementListenerSet;
         }
@@ -10215,7 +10215,7 @@ var require_react_dom_development = __commonJS({
           var pendingUNSAFE_ComponentWillReceivePropsWarnings = [];
           var pendingComponentWillUpdateWarnings = [];
           var pendingUNSAFE_ComponentWillUpdateWarnings = [];
-          var didWarnAboutUnsafeLifecycles = new Set();
+          var didWarnAboutUnsafeLifecycles = /* @__PURE__ */ new Set();
           ReactStrictModeWarnings.recordUnsafeLifecycleWarnings = function(fiber, instance) {
             if (didWarnAboutUnsafeLifecycles.has(fiber.type)) {
               return;
@@ -10240,7 +10240,7 @@ var require_react_dom_development = __commonJS({
             }
           };
           ReactStrictModeWarnings.flushPendingUnsafeLifecycleWarnings = function() {
-            var componentWillMountUniqueNames = new Set();
+            var componentWillMountUniqueNames = /* @__PURE__ */ new Set();
             if (pendingComponentWillMountWarnings.length > 0) {
               pendingComponentWillMountWarnings.forEach(function(fiber) {
                 componentWillMountUniqueNames.add(getComponentName(fiber.type) || "Component");
@@ -10248,7 +10248,7 @@ var require_react_dom_development = __commonJS({
               });
               pendingComponentWillMountWarnings = [];
             }
-            var UNSAFE_componentWillMountUniqueNames = new Set();
+            var UNSAFE_componentWillMountUniqueNames = /* @__PURE__ */ new Set();
             if (pendingUNSAFE_ComponentWillMountWarnings.length > 0) {
               pendingUNSAFE_ComponentWillMountWarnings.forEach(function(fiber) {
                 UNSAFE_componentWillMountUniqueNames.add(getComponentName(fiber.type) || "Component");
@@ -10256,7 +10256,7 @@ var require_react_dom_development = __commonJS({
               });
               pendingUNSAFE_ComponentWillMountWarnings = [];
             }
-            var componentWillReceivePropsUniqueNames = new Set();
+            var componentWillReceivePropsUniqueNames = /* @__PURE__ */ new Set();
             if (pendingComponentWillReceivePropsWarnings.length > 0) {
               pendingComponentWillReceivePropsWarnings.forEach(function(fiber) {
                 componentWillReceivePropsUniqueNames.add(getComponentName(fiber.type) || "Component");
@@ -10264,7 +10264,7 @@ var require_react_dom_development = __commonJS({
               });
               pendingComponentWillReceivePropsWarnings = [];
             }
-            var UNSAFE_componentWillReceivePropsUniqueNames = new Set();
+            var UNSAFE_componentWillReceivePropsUniqueNames = /* @__PURE__ */ new Set();
             if (pendingUNSAFE_ComponentWillReceivePropsWarnings.length > 0) {
               pendingUNSAFE_ComponentWillReceivePropsWarnings.forEach(function(fiber) {
                 UNSAFE_componentWillReceivePropsUniqueNames.add(getComponentName(fiber.type) || "Component");
@@ -10272,7 +10272,7 @@ var require_react_dom_development = __commonJS({
               });
               pendingUNSAFE_ComponentWillReceivePropsWarnings = [];
             }
-            var componentWillUpdateUniqueNames = new Set();
+            var componentWillUpdateUniqueNames = /* @__PURE__ */ new Set();
             if (pendingComponentWillUpdateWarnings.length > 0) {
               pendingComponentWillUpdateWarnings.forEach(function(fiber) {
                 componentWillUpdateUniqueNames.add(getComponentName(fiber.type) || "Component");
@@ -10280,7 +10280,7 @@ var require_react_dom_development = __commonJS({
               });
               pendingComponentWillUpdateWarnings = [];
             }
-            var UNSAFE_componentWillUpdateUniqueNames = new Set();
+            var UNSAFE_componentWillUpdateUniqueNames = /* @__PURE__ */ new Set();
             if (pendingUNSAFE_ComponentWillUpdateWarnings.length > 0) {
               pendingUNSAFE_ComponentWillUpdateWarnings.forEach(function(fiber) {
                 UNSAFE_componentWillUpdateUniqueNames.add(getComponentName(fiber.type) || "Component");
@@ -10313,8 +10313,8 @@ var require_react_dom_development = __commonJS({
               warn("componentWillUpdate has been renamed, and is not recommended for use. See https://reactjs.org/link/unsafe-component-lifecycles for details.\n\n* Move data fetching code or side effects to componentDidUpdate.\n* Rename componentWillUpdate to UNSAFE_componentWillUpdate to suppress this warning in non-strict mode. In React 18.x, only the UNSAFE_ name will work. To rename all deprecated lifecycles to their new names, you can run `npx react-codemod rename-unsafe-lifecycles` in your project source folder.\n\nPlease update the following components: %s", _sortedNames5);
             }
           };
-          var pendingLegacyContextWarning = new Map();
-          var didWarnAboutLegacyContext = new Set();
+          var pendingLegacyContextWarning = /* @__PURE__ */ new Map();
+          var didWarnAboutLegacyContext = /* @__PURE__ */ new Set();
           ReactStrictModeWarnings.recordLegacyContextWarning = function(fiber, instance) {
             var strictRoot = findStrictRoot(fiber);
             if (strictRoot === null) {
@@ -10339,7 +10339,7 @@ var require_react_dom_development = __commonJS({
                 return;
               }
               var firstFiber = fiberArray[0];
-              var uniqueNames = new Set();
+              var uniqueNames = /* @__PURE__ */ new Set();
               fiberArray.forEach(function(fiber) {
                 uniqueNames.add(getComponentName(fiber.type) || "Component");
                 didWarnAboutLegacyContext.add(fiber.type);
@@ -10360,7 +10360,7 @@ var require_react_dom_development = __commonJS({
             pendingUNSAFE_ComponentWillReceivePropsWarnings = [];
             pendingComponentWillUpdateWarnings = [];
             pendingUNSAFE_ComponentWillUpdateWarnings = [];
-            pendingLegacyContextWarning = new Map();
+            pendingLegacyContextWarning = /* @__PURE__ */ new Map();
           };
         }
         function resolveDefaultProps(Component, baseProps) {
@@ -10895,7 +10895,7 @@ var require_react_dom_development = __commonJS({
         }
         var fakeInternalInstance = {};
         var isArray = Array.isArray;
-        var emptyRefsObject = new React3.Component().refs;
+        var emptyRefsObject = new React4.Component().refs;
         var didWarnAboutStateAssignmentForComponent;
         var didWarnAboutUninitializedState;
         var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -10907,15 +10907,15 @@ var require_react_dom_development = __commonJS({
         var didWarnAboutContextTypeAndContextTypes;
         var didWarnAboutInvalidateContextType;
         {
-          didWarnAboutStateAssignmentForComponent = new Set();
-          didWarnAboutUninitializedState = new Set();
-          didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate = new Set();
-          didWarnAboutLegacyLifecyclesAndDerivedState = new Set();
-          didWarnAboutDirectlyAssigningPropsToState = new Set();
-          didWarnAboutUndefinedDerivedState = new Set();
-          didWarnAboutContextTypeAndContextTypes = new Set();
-          didWarnAboutInvalidateContextType = new Set();
-          var didWarnOnInvalidCallback = new Set();
+          didWarnAboutStateAssignmentForComponent = /* @__PURE__ */ new Set();
+          didWarnAboutUninitializedState = /* @__PURE__ */ new Set();
+          didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate = /* @__PURE__ */ new Set();
+          didWarnAboutLegacyLifecyclesAndDerivedState = /* @__PURE__ */ new Set();
+          didWarnAboutDirectlyAssigningPropsToState = /* @__PURE__ */ new Set();
+          didWarnAboutUndefinedDerivedState = /* @__PURE__ */ new Set();
+          didWarnAboutContextTypeAndContextTypes = /* @__PURE__ */ new Set();
+          didWarnAboutInvalidateContextType = /* @__PURE__ */ new Set();
+          var didWarnOnInvalidCallback = /* @__PURE__ */ new Set();
           warnOnInvalidCallback = function(callback, callerName) {
             if (callback === null || typeof callback === "function") {
               return;
@@ -11587,7 +11587,7 @@ var require_react_dom_development = __commonJS({
             return null;
           }
           function mapRemainingChildren(returnFiber, currentFirstChild) {
-            var existingChildren = new Map();
+            var existingChildren = /* @__PURE__ */ new Map();
             var existingChild = currentFirstChild;
             while (existingChild !== null) {
               if (existingChild.key !== null) {
@@ -11804,7 +11804,7 @@ var require_react_dom_development = __commonJS({
                     break;
                   }
                   if (knownKeys === null) {
-                    knownKeys = new Set();
+                    knownKeys = /* @__PURE__ */ new Set();
                     knownKeys.add(key);
                     break;
                   }
@@ -12586,7 +12586,7 @@ var require_react_dom_development = __commonJS({
         var didWarnAboutUseOpaqueIdentifier;
         {
           didWarnAboutUseOpaqueIdentifier = {};
-          didWarnAboutMismatchedHooksForComponent = new Set();
+          didWarnAboutMismatchedHooksForComponent = /* @__PURE__ */ new Set();
         }
         var renderLanes = NoLanes;
         var currentlyRenderingFiber$1 = null;
@@ -16305,12 +16305,12 @@ var require_react_dom_development = __commonJS({
           var threadIDs;
           if (pingCache === null) {
             pingCache = root2.pingCache = new PossiblyWeakMap$1();
-            threadIDs = new Set();
+            threadIDs = /* @__PURE__ */ new Set();
             pingCache.set(wakeable, threadIDs);
           } else {
             threadIDs = pingCache.get(wakeable);
             if (threadIDs === void 0) {
-              threadIDs = new Set();
+              threadIDs = /* @__PURE__ */ new Set();
               pingCache.set(wakeable, threadIDs);
             }
           }
@@ -16342,7 +16342,7 @@ var require_react_dom_development = __commonJS({
               if (_workInProgress.tag === SuspenseComponent && shouldCaptureSuspense(_workInProgress, hasInvisibleParentBoundary)) {
                 var wakeables = _workInProgress.updateQueue;
                 if (wakeables === null) {
-                  var updateQueue = new Set();
+                  var updateQueue = /* @__PURE__ */ new Set();
                   updateQueue.add(wakeable);
                   _workInProgress.updateQueue = updateQueue;
                 } else {
@@ -16407,7 +16407,7 @@ var require_react_dom_development = __commonJS({
         }
         var didWarnAboutUndefinedSnapshotBeforeUpdate = null;
         {
-          didWarnAboutUndefinedSnapshotBeforeUpdate = new Set();
+          didWarnAboutUndefinedSnapshotBeforeUpdate = /* @__PURE__ */ new Set();
         }
         var PossiblyWeakSet = typeof WeakSet === "function" ? WeakSet : Set;
         var callComponentWillUnmountWithTimer = function(current2, instance) {
@@ -17395,7 +17395,7 @@ var require_react_dom_development = __commonJS({
           } else {
             if ((executionContext & DiscreteEventContext) !== NoContext && (priorityLevel === UserBlockingPriority$2 || priorityLevel === ImmediatePriority$1)) {
               if (rootsWithPendingDiscreteUpdates === null) {
-                rootsWithPendingDiscreteUpdates = new Set([root2]);
+                rootsWithPendingDiscreteUpdates = /* @__PURE__ */ new Set([root2]);
               } else {
                 rootsWithPendingDiscreteUpdates.add(root2);
               }
@@ -18500,7 +18500,7 @@ var require_react_dom_development = __commonJS({
         }
         function markLegacyErrorBoundaryAsFailed(instance) {
           if (legacyErrorBoundariesThatAlreadyFailed === null) {
-            legacyErrorBoundariesThatAlreadyFailed = new Set([instance]);
+            legacyErrorBoundariesThatAlreadyFailed = /* @__PURE__ */ new Set([instance]);
           } else {
             legacyErrorBoundariesThatAlreadyFailed.add(instance);
           }
@@ -18649,7 +18649,7 @@ var require_react_dom_development = __commonJS({
               }
               didWarnStateUpdateForNotYetMountedComponent.add(componentName);
             } else {
-              didWarnStateUpdateForNotYetMountedComponent = new Set([componentName]);
+              didWarnStateUpdateForNotYetMountedComponent = /* @__PURE__ */ new Set([componentName]);
             }
             var previousFiber = current;
             try {
@@ -18681,7 +18681,7 @@ var require_react_dom_development = __commonJS({
               }
               didWarnStateUpdateForUnmountedComponent.add(componentName);
             } else {
-              didWarnStateUpdateForUnmountedComponent = new Set([componentName]);
+              didWarnStateUpdateForUnmountedComponent = /* @__PURE__ */ new Set([componentName]);
             }
             if (isFlushingPassiveEffects)
               ;
@@ -18731,7 +18731,7 @@ var require_react_dom_development = __commonJS({
         var didWarnAboutUpdateInRender = false;
         var didWarnAboutUpdateInRenderForAnotherComponent;
         {
-          didWarnAboutUpdateInRenderForAnotherComponent = new Set();
+          didWarnAboutUpdateInRenderForAnotherComponent = /* @__PURE__ */ new Set();
         }
         function warnAboutRenderPhaseUpdatesInDEV(fiber) {
           {
@@ -18857,7 +18857,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           scheduleInteractions(root2, lane, tracing.__interactionsRef.current);
         }
         function startWorkOnPendingInteractions(root2, lanes) {
-          var interactions = new Set();
+          var interactions = /* @__PURE__ */ new Set();
           root2.pendingInteractionMap.forEach(function(scheduledInteractions, scheduledLane) {
             if (includesSomeLane(lanes, scheduledLane)) {
               scheduledInteractions.forEach(function(interaction) {
@@ -19031,7 +19031,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               return;
             }
             if (failedBoundaries === null) {
-              failedBoundaries = new WeakSet();
+              failedBoundaries = /* @__PURE__ */ new WeakSet();
             }
             failedBoundaries.add(fiber);
           }
@@ -19113,7 +19113,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         }
         var findHostInstancesForRefresh = function(root2, families) {
           {
-            var hostInstances = new Set();
+            var hostInstances = /* @__PURE__ */ new Set();
             var types = new Set(families.map(function(family) {
               return family.current;
             }));
@@ -19212,8 +19212,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           hasBadMapPolyfill = false;
           try {
             var nonExtensibleObject = Object.preventExtensions({});
-            new Map([[nonExtensibleObject, null]]);
-            new Set([nonExtensibleObject]);
+            /* @__PURE__ */ new Map([[nonExtensibleObject, null]]);
+            /* @__PURE__ */ new Set([nonExtensibleObject]);
           } catch (e) {
             hasBadMapPolyfill = true;
           }
@@ -19660,8 +19660,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           }
           {
             this.interactionThreadID = tracing.unstable_getThreadID();
-            this.memoizedInteractions = new Set();
-            this.pendingInteractionMap = new Map();
+            this.memoizedInteractions = /* @__PURE__ */ new Set();
+            this.pendingInteractionMap = /* @__PURE__ */ new Map();
           }
           {
             switch (tag) {
@@ -20419,11 +20419,11 @@ var require_react_dom = __commonJS({
 });
 
 // src/index.jsx
-var import_react4 = __toModule(require_react());
-var import_react_dom = __toModule(require_react_dom());
+var import_react5 = __toESM(require_react());
+var import_react_dom = __toESM(require_react_dom());
 
 // node_modules/react-router-dom/index.js
-var import_react2 = __toModule(require_react());
+var import_react2 = __toESM(require_react());
 
 // node_modules/@babel/runtime/helpers/esm/extends.js
 function _extends() {
@@ -20457,7 +20457,7 @@ function D(b, h) {
     typeof console !== "undefined" && console.warn(h);
     try {
       throw Error(h);
-    } catch (k) {
+    } catch (e) {
     }
   }
 }
@@ -20472,13 +20472,13 @@ function F() {
   }, push: function(h) {
     b.push(h);
     return function() {
-      b = b.filter(function(k) {
-        return k !== h;
+      b = b.filter(function(e) {
+        return e !== h;
       });
     };
   }, call: function(h) {
-    b.forEach(function(k) {
-      return k && k(h);
+    b.forEach(function(e) {
+      return e && e(h);
     });
   } };
 }
@@ -20486,17 +20486,23 @@ function H() {
   return Math.random().toString(36).substr(2, 8);
 }
 function I(b) {
-  var h = b.pathname, k = b.search;
+  var h = b.pathname;
+  h = h === void 0 ? "/" : h;
+  var e = b.search;
+  e = e === void 0 ? "" : e;
   b = b.hash;
-  return (h === void 0 ? "/" : h) + (k === void 0 ? "" : k) + (b === void 0 ? "" : b);
+  b = b === void 0 ? "" : b;
+  e && e !== "?" && (h += e.charAt(0) === "?" ? e : "?" + e);
+  b && b !== "#" && (h += b.charAt(0) === "#" ? b : "#" + b);
+  return h;
 }
 function J(b) {
   var h = {};
   if (b) {
-    var k = b.indexOf("#");
-    0 <= k && (h.hash = b.substr(k), b = b.substr(0, k));
-    k = b.indexOf("?");
-    0 <= k && (h.search = b.substr(k), b = b.substr(0, k));
+    var e = b.indexOf("#");
+    0 <= e && (h.hash = b.substr(e), b = b.substr(0, e));
+    e = b.indexOf("?");
+    0 <= e && (h.search = b.substr(e), b = b.substr(0, e));
     b && (h.pathname = b);
   }
   return h;
@@ -20506,7 +20512,7 @@ function createBrowserHistory(b) {
     var c = p.location, a = m.state || {};
     return [a.idx, C({ pathname: c.pathname, search: c.search, hash: c.hash, state: a.usr || null, key: a.key || "default" })];
   }
-  function k(c) {
+  function e(c) {
     return typeof c === "string" ? c : I(c);
   }
   function x(c, a) {
@@ -20521,16 +20527,16 @@ function createBrowserHistory(b) {
     d.call({ action: t, location: q });
   }
   function A(c, a) {
-    function e() {
+    function f() {
       A(c, a);
     }
-    var l = r.Push, g = x(c, a);
-    if (!f.length || (f.call({ action: l, location: g, retry: e }), false)) {
-      var n = [{ usr: g.state, key: g.key, idx: v + 1 }, k(g)];
-      g = n[0];
+    var l = r.Push, k = x(c, a);
+    if (!g.length || (g.call({ action: l, location: k, retry: f }), false)) {
+      var n = [{ usr: k.state, key: k.key, idx: v + 1 }, e(k)];
+      k = n[0];
       n = n[1];
       try {
-        m.pushState(g, "", n);
+        m.pushState(k, "", n);
       } catch (G) {
         p.location.assign(n);
       }
@@ -20538,11 +20544,11 @@ function createBrowserHistory(b) {
     }
   }
   function y(c, a) {
-    function e() {
+    function f() {
       y(c, a);
     }
-    var l = r.Replace, g = x(c, a);
-    f.length && (f.call({ action: l, location: g, retry: e }), 1) || (g = [{ usr: g.state, key: g.key, idx: v }, k(g)], m.replaceState(g[0], "", g[1]), z(l));
+    var l = r.Replace, k = x(c, a);
+    g.length && (g.call({ action: l, location: k, retry: f }), 1) || (k = [{ usr: k.state, key: k.key, idx: v }, e(k)], m.replaceState(k[0], "", k[1]), z(l));
   }
   function w(c) {
     m.go(c);
@@ -20552,13 +20558,13 @@ function createBrowserHistory(b) {
   var p = b === void 0 ? document.defaultView : b, m = p.history, u = null;
   p.addEventListener("popstate", function() {
     if (u)
-      f.call(u), u = null;
+      g.call(u), u = null;
     else {
-      var c = r.Pop, a = h(), e = a[0];
+      var c = r.Pop, a = h(), f = a[0];
       a = a[1];
-      if (f.length)
-        if (e != null) {
-          var l = v - e;
+      if (g.length)
+        if (f != null) {
+          var l = v - f;
           l && (u = { action: c, location: a, retry: function() {
             w(-1 * l);
           } }, w(l));
@@ -20570,30 +20576,30 @@ function createBrowserHistory(b) {
   });
   var t = r.Pop;
   b = h();
-  var v = b[0], q = b[1], d = F(), f = F();
+  var v = b[0], q = b[1], d = F(), g = F();
   v == null && (v = 0, m.replaceState(_extends({}, m.state, { idx: v }), ""));
   return { get action() {
     return t;
   }, get location() {
     return q;
-  }, createHref: k, push: A, replace: y, go: w, back: function() {
+  }, createHref: e, push: A, replace: y, go: w, back: function() {
     w(-1);
   }, forward: function() {
     w(1);
   }, listen: function(c) {
     return d.push(c);
   }, block: function(c) {
-    var a = f.push(c);
-    f.length === 1 && p.addEventListener("beforeunload", E);
+    var a = g.push(c);
+    g.length === 1 && p.addEventListener("beforeunload", E);
     return function() {
       a();
-      f.length || p.removeEventListener("beforeunload", E);
+      g.length || p.removeEventListener("beforeunload", E);
     };
   } };
 }
 
 // node_modules/react-router/index.js
-var import_react = __toModule(require_react());
+var import_react = __toESM(require_react());
 function invariant(cond, message) {
   if (!cond)
     throw new Error(message);
@@ -20630,8 +20636,8 @@ var RouteContext = /* @__PURE__ */ (0, import_react.createContext)({
 if (true) {
   RouteContext.displayName = "Route";
 }
-function Outlet(_props) {
-  return useOutlet();
+function Outlet(props) {
+  return useOutlet(props.context);
 }
 function Route(_props) {
   true ? invariant(false, "A <Route> is only ever to be used as the child of <Routes> element, never rendered directly. Please wrap your <Route> in a <Routes>.") : invariant(false);
@@ -20762,8 +20768,15 @@ function useNavigate() {
   }, [basename, navigator2, routePathnamesJson, locationPathname]);
   return navigate;
 }
-function useOutlet() {
-  return (0, import_react.useContext)(RouteContext).outlet;
+var OutletContext = /* @__PURE__ */ (0, import_react.createContext)(null);
+function useOutlet(context) {
+  let outlet = (0, import_react.useContext)(RouteContext).outlet;
+  if (outlet) {
+    return /* @__PURE__ */ (0, import_react.createElement)(OutletContext.Provider, {
+      value: context
+    }, outlet);
+  }
+  return outlet;
 }
 function useResolvedPath(to) {
   let {
@@ -20789,7 +20802,7 @@ function useRoutes(routes, locationArg) {
     let parentPath = parentRoute && parentRoute.path || "";
     warningOnce(parentPathname, !parentRoute || parentPath.endsWith("*"), "You rendered descendant <Routes> (or called `useRoutes()`) at " + ('"' + parentPathname + '" (under <Route path="' + parentPath + '">) but the ') + `parent route path has no trailing "*". This means if you navigate deeper, the parent won't match anymore and therefore the child routes will never render.
 
-` + ('Please change the parent <Route path="' + parentPath + '"> to <Route ') + ('path="' + parentPath + '/*">.'));
+` + ('Please change the parent <Route path="' + parentPath + '"> to <Route ') + ('path="' + (parentPath === "/" ? "*" : parentPath + "/*") + '">.'));
   }
   let locationFromContext = useLocation();
   let location;
@@ -20853,7 +20866,7 @@ function matchRoutes(routes, locationArg, basename) {
   rankRouteBranches(branches);
   let matches = null;
   for (let i = 0; matches == null && i < branches.length; ++i) {
-    matches = matchRouteBranch(branches[i], routes, pathname);
+    matches = matchRouteBranch(branches[i], pathname);
   }
   return matches;
 }
@@ -20871,7 +20884,8 @@ function flattenRoutes(routes, branches, parentsMeta, parentPath) {
     let meta = {
       relativePath: route.path || "",
       caseSensitive: route.caseSensitive === true,
-      childrenIndex: index
+      childrenIndex: index,
+      route
     };
     if (meta.relativePath.startsWith("/")) {
       !meta.relativePath.startsWith(parentPath) ? true ? invariant(false, 'Absolute route path "' + meta.relativePath + '" nested under path ' + ('"' + parentPath + '" is not valid. An absolute child route path ') + "must start with the combined path of all its parent routes.") : invariant(false) : void 0;
@@ -20919,8 +20933,7 @@ function compareIndexes(a, b) {
   let siblings = a.length === b.length && a.slice(0, -1).every((n, i) => n === b[i]);
   return siblings ? a[a.length - 1] - b[b.length - 1] : 0;
 }
-function matchRouteBranch(branch, routesArg, pathname) {
-  let routes = routesArg;
+function matchRouteBranch(branch, pathname) {
   let {
     routesMeta
   } = branch;
@@ -20939,7 +20952,7 @@ function matchRouteBranch(branch, routesArg, pathname) {
     if (!match)
       return null;
     Object.assign(matchedParams, match.params);
-    let route = routes[meta.childrenIndex];
+    let route = meta.route;
     matches.push({
       params: matchedParams,
       pathname: joinPaths([matchedPathname, match.pathname]),
@@ -20949,7 +20962,6 @@ function matchRouteBranch(branch, routesArg, pathname) {
     if (match.pathnameBase !== "/") {
       matchedPathname = joinPaths([matchedPathname, match.pathnameBase]);
     }
-    routes = route.children;
   }
   return matches;
 }
@@ -21016,7 +21028,7 @@ function compilePath(path, caseSensitive, end) {
     paramNames.push("*");
     regexpSource += path === "*" || path === "/*" ? "(.*)$" : "(?:\\/(.+)|\\/*)$";
   } else {
-    regexpSource += end ? "\\/*$" : "(?:\\b|$)";
+    regexpSource += end ? "\\/*$" : "(?:\\b|\\/|$)";
   }
   let matcher = new RegExp(regexpSource, caseSensitive ? void 0 : "i");
   return [matcher, paramNames];
@@ -21132,7 +21144,7 @@ function _objectWithoutPropertiesLoose(source, excluded) {
   return target;
 }
 var _excluded = ["onClick", "reloadDocument", "replace", "state", "target", "to"];
-var _excluded2 = ["aria-current", "caseSensitive", "className", "end", "style", "to"];
+var _excluded2 = ["aria-current", "caseSensitive", "className", "end", "style", "to", "children"];
 function BrowserRouter(_ref) {
   let {
     basename,
@@ -21159,10 +21171,32 @@ function BrowserRouter(_ref) {
     navigator: history
   });
 }
+function HistoryRouter(_ref3) {
+  let {
+    basename,
+    children,
+    history
+  } = _ref3;
+  const [state, setState] = (0, import_react2.useState)({
+    action: history.action,
+    location: history.location
+  });
+  (0, import_react2.useLayoutEffect)(() => history.listen(setState), [history]);
+  return /* @__PURE__ */ (0, import_react2.createElement)(Router, {
+    basename,
+    children,
+    location: state.location,
+    navigationType: state.action,
+    navigator: history
+  });
+}
+if (true) {
+  HistoryRouter.displayName = "unstable_HistoryRouter";
+}
 function isModifiedEvent(event) {
   return !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey);
 }
-var Link = /* @__PURE__ */ (0, import_react2.forwardRef)(function LinkWithRef(_ref3, ref) {
+var Link = /* @__PURE__ */ (0, import_react2.forwardRef)(function LinkWithRef(_ref4, ref) {
   let {
     onClick,
     reloadDocument,
@@ -21170,7 +21204,7 @@ var Link = /* @__PURE__ */ (0, import_react2.forwardRef)(function LinkWithRef(_r
     state,
     target,
     to
-  } = _ref3, rest = _objectWithoutPropertiesLoose(_ref3, _excluded);
+  } = _ref4, rest = _objectWithoutPropertiesLoose(_ref4, _excluded);
   let href = useHref(to);
   let internalOnClick = useLinkClickHandler(to, {
     replace,
@@ -21194,15 +21228,16 @@ var Link = /* @__PURE__ */ (0, import_react2.forwardRef)(function LinkWithRef(_r
 if (true) {
   Link.displayName = "Link";
 }
-var NavLink = /* @__PURE__ */ (0, import_react2.forwardRef)(function NavLinkWithRef(_ref4, ref) {
+var NavLink = /* @__PURE__ */ (0, import_react2.forwardRef)(function NavLinkWithRef(_ref5, ref) {
   let {
     "aria-current": ariaCurrentProp = "page",
     caseSensitive = false,
     className: classNameProp = "",
     end = false,
     style: styleProp,
-    to
-  } = _ref4, rest = _objectWithoutPropertiesLoose(_ref4, _excluded2);
+    to,
+    children
+  } = _ref5, rest = _objectWithoutPropertiesLoose(_ref5, _excluded2);
   let location = useLocation();
   let path = useResolvedPath(to);
   let locationPathname = location.pathname;
@@ -21230,7 +21265,9 @@ var NavLink = /* @__PURE__ */ (0, import_react2.forwardRef)(function NavLinkWith
     ref,
     style,
     to
-  }));
+  }), typeof children === "function" ? children({
+    isActive
+  }) : children);
 });
 if (true) {
   NavLink.displayName = "NavLink";
@@ -21257,21 +21294,31 @@ function useLinkClickHandler(to, _temp) {
 }
 
 // src/App.jsx
-var import_react3 = __toModule(require_react());
+var import_react4 = __toESM(require_react());
+
+// src/Panel.jsx
+var import_react3 = __toESM(require_react());
+function Panel() {
+  return /* @__PURE__ */ import_react3.default.createElement(import_react3.default.Fragment, null, /* @__PURE__ */ import_react3.default.createElement("h2", null, "More Whirled"));
+}
+
+// src/App.jsx
 function App() {
   const location = useLocation();
-  const [path, setPath] = import_react3.default.useState("");
-  import_react3.default.useEffect(() => {
+  const [path, setPath] = import_react4.default.useState("");
+  import_react4.default.useEffect(() => {
     setPath(location.pathname);
   }, [location]);
-  return /* @__PURE__ */ import_react3.default.createElement("div", null, /* @__PURE__ */ import_react3.default.createElement("h1", null, "Hello, whirled!!"), "Path: ", path);
+  return /* @__PURE__ */ import_react4.default.createElement("div", null, /* @__PURE__ */ import_react4.default.createElement("h1", null, "Hello, whirled!!"), "Path: ", path, /* @__PURE__ */ import_react4.default.createElement("br", null), /* @__PURE__ */ import_react4.default.createElement(import_react4.Suspense, {
+    fallback: /* @__PURE__ */ import_react4.default.createElement("div", null, "Loading...")
+  }, /* @__PURE__ */ import_react4.default.createElement(Panel, null)));
 }
 var App_default = App;
 
 // src/index.jsx
 function Routed() {
   const nav = useNavigate();
-  import_react4.default.useEffect(() => {
+  import_react5.default.useEffect(() => {
     const referrer = document.referrer;
     if (referrer) {
       const path = new URL(document.referrer).pathname;
@@ -21280,12 +21327,12 @@ function Routed() {
       }
     }
   }, []);
-  return /* @__PURE__ */ import_react4.default.createElement(Routes, null, /* @__PURE__ */ import_react4.default.createElement(Route, {
+  return /* @__PURE__ */ import_react5.default.createElement(Routes, null, /* @__PURE__ */ import_react5.default.createElement(Route, {
     path: "/*",
-    element: /* @__PURE__ */ import_react4.default.createElement(App_default, null)
+    element: /* @__PURE__ */ import_react5.default.createElement(App_default, null)
   }));
 }
-import_react_dom.default.render(/* @__PURE__ */ import_react4.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react4.default.createElement(Routed, null)), document.getElementById("root"));
+import_react_dom.default.render(/* @__PURE__ */ import_react5.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react5.default.createElement(Routed, null)), document.getElementById("root"));
 console.log("App loaded.");
 /*
 object-assign
@@ -21306,7 +21353,7 @@ object-assign
  * @license Modernizr 3.0.0pre (Custom Build) | MIT
  */
 /**
- * React Router DOM v6.0.2
+ * React Router DOM v6.2.1
  *
  * Copyright (c) Remix Software Inc.
  *
@@ -21316,7 +21363,7 @@ object-assign
  * @license MIT
  */
 /**
- * React Router v6.0.2
+ * React Router v6.2.1
  *
  * Copyright (c) Remix Software Inc.
  *

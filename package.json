@@ -23,11 +23,16 @@
   },
   "homepage": "https://github.com/pablo-mayrgundter/react#readme",
   "dependencies": {
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@mui/lab": "^5.0.0-alpha.62",
+    "@mui/material": "^5.2.6",
+    "@mui/styles": "^5.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-router-dom": "^6.0.2"
+    "react-router-dom": "^6.2.1"
   },
   "devDependencies": {
-    "esbuild": "^0.13.14"
+    "esbuild": "^0.14.9"
   }
 }

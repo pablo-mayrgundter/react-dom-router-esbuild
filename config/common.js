@@ -3,12 +3,7 @@ const buildDir = 'docs'
 const build = {
   entryPoints: [entry],
   bundle: true,
-  // Splitting
-  // Entry points (our src/index.jsx) are currently not named with
-  // cache-busting segments, like index-x84nfi.js, so we should be
-  // careful with our caching, i.e. not putting much index.jsx.
-  // See:
-  //   https://esbuild.github.io/api/#chunk-names
+  // Splitting is experimental
   //   https://github.com/evanw/esbuild/issues/16
   splitting: true,
   outdir: buildDir,
