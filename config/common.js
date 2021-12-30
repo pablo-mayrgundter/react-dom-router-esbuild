@@ -9,7 +9,7 @@ const build = {
   outdir: buildDir,
   format: 'esm',
   sourcemap: true,
-  target: ['chrome58','firefox57','safari11','edge18'],
+  target: ['esnext'],
   logLevel: 'debug'
 }
 

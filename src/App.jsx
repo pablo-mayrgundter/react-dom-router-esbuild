@@ -1,11 +1,6 @@
 import React, { Suspense } from 'react'
 import { useLocation } from 'react-router-dom'
-import Panel from './Panel'
-// Causes error in react:
-//   Uncaught (in promise) Error: Dynamic require of "./Panel-EALXS26H.js" is not supported
-//      at chunk-SN6E3CO2.js:13
-//      at App.jsx:3
-//const Panel = React.lazy(() => import('./Panel'))
+const Panel = React.lazy(() => import('./Panel'))
 
 
 function App() {
