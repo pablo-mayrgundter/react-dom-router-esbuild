@@ -6,7 +6,7 @@ Repo clone takes 3s
 
 yarn install takes 1s
 
-13MB node_modules
+15MB node_modules
 
 yarn build takes <1s
 
